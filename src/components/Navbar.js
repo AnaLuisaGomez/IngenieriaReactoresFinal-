@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 import { IntIrrevOrd0 } from "./Velocidad/IntIrrevOrd0";
 
 export const Navbar = () => {
-  const [element1Expanded, setElement1Expanded] = useState(true);
-  const [element2Expanded, setElement2Expanded] = useState(true);
-  const [element3Expanded, setElement3Expanded] = useState(true);
-  const [element4Expanded, setElement4Expanded] = useState(true);
-  const [element5Expanded, setElement5Expanded] = useState(true);
-  const [element6Expanded, setElement6Expanded] = useState(true);
-  const [element7Expanded, setElement7Expanded] = useState(true);
-  const [element8Expanded, setElement8Expanded] = useState(true);
-  const [element9Expanded, setElement9Expanded] = useState(true);
-  const [element10Expanded, setElement10Expanded] = useState(true);
+  const [element1Expanded, setElement1Expanded] = useState(false);
+  const [element2Expanded, setElement2Expanded] = useState(false);
+  const [element3Expanded, setElement3Expanded] = useState(false);
+  const [element4Expanded, setElement4Expanded] = useState(false);
+  const [element5Expanded, setElement5Expanded] = useState(false);
+  const [element6Expanded, setElement6Expanded] = useState(false);
+  const [element7Expanded, setElement7Expanded] = useState(false);
+  const [element8Expanded, setElement8Expanded] = useState(false);
+  const [element9Expanded, setElement9Expanded] = useState(false);
+  const [element10Expanded, setElement10Expanded] = useState(false);
 
   const toggleElement1 = () => {
     setElement1Expanded(!element1Expanded);
