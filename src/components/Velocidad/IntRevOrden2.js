@@ -40,18 +40,27 @@ export const IntRevOrden2 = () => {
     
       // Agregar funcion
       var k1 = new Number();
-      k1 = (parseFloat(document.getElementById("cc_"+i).value) + parseFloat(document.getElementById("cc_"+j).value)) / 2;
-      //document.getElementById("ccp_"+i).value = ccPromedio;
+      var termino = Number();
+      var line1 = Number();
+      var line2 = Number();
+      var line3 = Number();
+      var line4 = Number();
+      termino = Math.pow(beta,2) - (4 * gama * alpha);
+      termino = Math.sqrt(termino);
+      line1 = (2 * gama * ccTemp) + beta - termino;
+      line2 = (2 * gama * ccTemp) + beta + termino;
+      line3 = beta - termino;
+      line4 = beta + termino;
+      k1 = (1 / termino) * Math.log((line1/line2)/(line3/line4));
+      k1 = k1 * (1 / parseFloat(data["t_"+i]) );
 
        // Calculate k2
        var k2 = new Number();
        var t = new Number();
        k2 = k1 / keq;
        
-       document.getElementById("k_2" + i).value = k2;
-       //document.getElementById("t_" + index).value = "infinito";
-       //document.getElementById("CAp_" + index).value = "infinito";
-       //document.getElementById("k_" + index).value = "infinito";
+       document.getElementById("k1_" + i).value = k1;
+       document.getElementById("k2_" + i).value = k2;
     }
 
     // K1 promedio
@@ -63,7 +72,7 @@ export const IntRevOrden2 = () => {
       counter += 1;
     }
     kpromedio = kpromedio / counter;
-    document.getElementById("k1").value = kpromedio;
+    document.getElementById("K1").value = kpromedio;
 
     // K2 promedio
     var k2promedio = new Number();
@@ -74,7 +83,7 @@ export const IntRevOrden2 = () => {
       counter2 += 1;
     }
     k2promedio = k2promedio / counter2;
-    document.getElementById("k2").value = kpromedio;
+    document.getElementById("K2").value = k2promedio;
   };
 
   // Need to change this part
@@ -236,7 +245,7 @@ export const IntRevOrden2 = () => {
                             <input
                               className="form-control"
                               {...register("k1_" + i)}
-                              id={"ccp_" + i}
+                              id={"k1_" + i}
                               readOnly
                             />
                           </td>
@@ -244,7 +253,7 @@ export const IntRevOrden2 = () => {
                             <input
                               className="form-control"
                               {...register("k2_" + i)}
-                              id={"k_" + i}
+                              id={"k2_" + i}
                               readOnly
                             />
                           </td>
@@ -260,14 +269,6 @@ export const IntRevOrden2 = () => {
                 type="submit"
                 value="Calcular"
                 className="btn btn-primary"
-              />
-            </div>
-            <div className="row">
-              <label>K* promedio</label>
-              <input
-                className="form-control"
-                {...register("k_promedio")}
-                id={"k_promedio"}
               />
             </div>
             <div className="row">&nbsp;</div>
@@ -286,7 +287,7 @@ export const IntRevOrden2 = () => {
                   <th>
                     <input
                       className="form-control"
-                      {...register("k2")}
+                      {...register("K2")}
                       id={"K2"}
                     />
                   </th>

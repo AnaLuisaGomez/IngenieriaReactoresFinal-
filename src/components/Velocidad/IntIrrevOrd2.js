@@ -142,7 +142,7 @@ export const IntIrrevOrd2 = () => {
                       id={"kpromedio"}
                     />
                   </th>
-                  <th>CA 2</th>
+                  <th>CA^2</th>
                 </tr>
               </table>
             </div>

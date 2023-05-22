@@ -319,7 +319,7 @@ export const Navbar = () => {
             </li>
 
             <li>
-            <div className="sidebar-element">
+              <div className="sidebar-element">
                 <div className="element-header" onClick={toggleElement9}>
                   RTFP
                 </div>
@@ -350,7 +350,7 @@ export const Navbar = () => {
               </div>
             </li>
             <li>
-            <div className="sidebar-element">
+              <div className="sidebar-element">
                 <div className="element-header" onClick={toggleElement10}>
                   Reactores en serie
                 </div>
@@ -370,9 +370,11 @@ export const Navbar = () => {
                 )}
               </div>
             </li>
-            <li> <Link className="disabled-link2" to={"/"}>
-                        <b>Acerca de nosotros</b>
-                      </Link></li>
+            <li>
+              <Link className="disabled-link2" to={"/"}>
+                <b>Acerca de nosotros</b>
+              </Link>
+            </li>
           </ul>
         )}
       </div>
