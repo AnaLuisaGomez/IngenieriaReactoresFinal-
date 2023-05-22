@@ -17,8 +17,7 @@ export const Home = () => {
           <li className="list-group-item">Coronel Salas Juan Carlos</li>
           <li className="list-group-item">Gomez Garrido Ana Luisa</li>
           <li className="list-group-item">Rodríguez Zavala Karen</li>
-        </ul>
-        <button type="button" className="btn btn-primary" onClick={() => navigate('metodos')}>Iniciar</button>
+        </ul>        
       </div>
     </div>
   </div>
