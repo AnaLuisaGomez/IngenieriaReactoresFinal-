@@ -5,27 +5,38 @@ export const BATCH = () => {
   const { register, handleSubmit } = useForm();
   const calculate = (data) => {
     var n = Number();
-    var xtot = Number();
+    var xtotal = Number();
     var tos = Number();
     var toh = Number();
     var ttotal = Number();
-    var ne = Number();
+    var np = Number();
     var volumen  = Number();
 
-    n = parseFloat(data['cc']) / parseFloat(data['pm']);
-    xtot = (n / parseFloat(data['re'])) / parseFloat(data['ca0']);
-    tos = ( Math.log( 1 - xtot) ) * ((1 / parseFloat(data['gamma'])) * -1);
-    toh = tos * 3600;
-    ttotal = parseFloat(data['tm']) + toh;
-    ne = parseFloat(data['mc']) / parseFloat(data['densidad']);
-    volumen = ne / n;
+    let temperatura = parseFloat(data['temp']);
+    let presion = parseFloat(data['presion']);
+    let gamma = parseFloat(data['gamma']);
+    let ca0 = parseFloat(data['ca0']);
+    let re = parseFloat(data['re']);
+    let x = parseFloat(data['re']);
+    let mc = parseFloat(data['mc']);
+    let cc = parseFloat(data['cc']);
+    let pmC = parseFloat(data['pm']);
+    let tm = parseFloat(data['tm']);
+
+    n = cc / pmC;
+    xtotal = n / ( (re/100) * ca0 );
+    tos = (-1 * (1/gamma)) * ( Math.log(1 - xtotal) );
+    toh = tos / 3600;
+    ttotal = tm + toh;
+    np = (mc / pmC) * (1000);
+    volumen = (np / n) * 1.1;
 
     document.getElementById('n').value = n;
-    document.getElementById('xtot').value = xtot;
+    document.getElementById('xtot').value = xtotal;
     document.getElementById('tos').value = tos;
     document.getElementById('toh').value = toh;
     document.getElementById('ttotal').value = ttotal;
-    document.getElementById('ne').value = ne;
+    document.getElementById('np').value = np;
     document.getElementById('volumen').value = volumen;
   };
 
@@ -149,18 +160,7 @@ export const BATCH = () => {
                         id={"tm"}
                       />
                     </td>
-                    <td>s</td>
-                  </tr>
-                  <tr>
-                    <td>Densidad de C</td>
-                    <td>
-                      <input
-                        className="form-control"
-                        {...register("densidad")}
-                        id={"densidad"}
-                      />
-                    </td>
-                    <td></td>
+                    <td>hrs</td>
                   </tr>
                 </tbody>
               </table>
@@ -182,7 +182,7 @@ export const BATCH = () => {
                     <td>mol/lt</td>
                   </tr>
                   <tr>
-                    <td>Xtot</td>
+                    <td>Xtotal</td>
                     <td>
                       <input
                         className="form-control"
@@ -233,12 +233,12 @@ export const BATCH = () => {
                     <td>hrs</td>
                   </tr>
                   <tr>
-                    <td>ne</td>
+                    <td>np</td>
                     <td>
                       <input
                         className="form-control"
-                        {...register("ne")}
-                        id={"ne"}
+                        {...register("np")}
+                        id={"np"}
                       />
                     </td>
                     <td>mol</td>

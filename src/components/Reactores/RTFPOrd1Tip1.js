@@ -14,7 +14,7 @@ export const RTFPOrd1Tip1 = () => {
       (parseFloat(data["gamma"]) * parseFloat(data["presion"])) /
       (0.082 * parseFloat(data["temp"]));
     fa0 = ca0 * parseFloat(data["qa0"]);
-    v = (fa0 / (k*ca0)) * (Math.log(1-x) * -1);
+    v = ((fa0 / (k*ca0)) * -1) * (Math.log(1-x));
 
     document.getElementById("ca0").value = ca0;
     document.getElementById("fa0").value = fa0;
@@ -24,7 +24,7 @@ export const RTFPOrd1Tip1 = () => {
   return (
     <div className="card">
       <div className="card-body">
-        <h5 className="card-title">Reacción de primer orden A+I B+C</h5>
+        <h5 className="card-title">Reacción de primer orden A+I <b>&#x2192;</b> B+C</h5>
         <div className="card-text">
           <form className="form-inline" onSubmit={handleSubmit(calculate)}>
             <div className="row">&nbsp;</div>
@@ -56,7 +56,7 @@ export const RTFPOrd1Tip1 = () => {
                     <td>atm</td>
                   </tr>
                   <tr>
-                    <td>QA0</td>
+                    <td>QAo</td>
                     <td>
                       <input
                         className="form-control"
@@ -108,7 +108,7 @@ export const RTFPOrd1Tip1 = () => {
               <table className="table table-striped">
                 <tbody>
                   <tr>
-                    <td>CA0</td>
+                    <td>CAo</td>
                     <td>
                       <input
                         className="form-control"
@@ -119,7 +119,7 @@ export const RTFPOrd1Tip1 = () => {
                     <td>mol/lt</td>
                   </tr>
                   <tr>
-                    <td>FA0</td>
+                    <td>FAo</td>
                     <td>
                       <input
                         className="form-control"
@@ -127,7 +127,7 @@ export const RTFPOrd1Tip1 = () => {
                         id={"fa0"}
                       />
                     </td>
-                    <td>atm</td>
+                    <td>mol/s</td>
                   </tr>
                   <tr>
                     <td>V</td>

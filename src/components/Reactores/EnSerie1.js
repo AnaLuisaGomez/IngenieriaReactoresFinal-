@@ -8,14 +8,14 @@ export const EnSerie1 = () => {
     var teta = Number();
     var tetaT = Number();
     
-    var tiempo = parseFloat(data["tiempo"]);
-    var x = parseFloat(data["x"]);
-    var reactores = parseFloat(data["reactores"]);
+    let tiempo = parseFloat(data["tiempo"]);
+    let x = parseFloat(data["x"]);
+    let reactores = parseFloat(data["reactores"]);
     
     k = Math.log(1/(1-x));
     k = k * (1/tiempo);
     
-    teta = Math.pow(1 / (1-x), 1/(reactores-1));
+    teta = Math.pow( (1 / (1-x)) , (1/(reactores)) )-1;
     teta = teta / k;
 
     tetaT = teta * reactores;
@@ -99,7 +99,7 @@ export const EnSerie1 = () => {
                         id={"teta"}
                       />
                     </td>
-                    <td>mol/s</td>
+                    <td>hrs</td>
                   </tr>
                   <tr>
                     <td>ΘTOT</td>
@@ -110,7 +110,7 @@ export const EnSerie1 = () => {
                         id={"tetaT"}
                       />
                     </td>
-                    <td></td>
+                    <td>hrs</td>
                   </tr>
                 </tbody>
               </table>

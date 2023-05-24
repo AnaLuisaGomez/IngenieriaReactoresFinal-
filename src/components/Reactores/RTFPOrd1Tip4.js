@@ -17,7 +17,7 @@ export const RTFPOrd1Tip4 = () => {
   return (
     <div className="card">
       <div className="card-body">
-        <h5 className="card-title">Reacción a flujo constante A -- B</h5>
+        <h5 className="card-title">Reacción a flujo constante A <b>&#x2192;</b>  B</h5>
         <div className="card-text">
           <form className="form-inline" onSubmit={handleSubmit(calculate)}>
             <div className="row">&nbsp;</div>

@@ -7,24 +7,29 @@ export const RTFPOrd1Tip2 = () => {
     var ca0 = Number();
     var ea = Number();
     var v = Number();
-    var k = parseFloat(data['k']);
-    var x = parseFloat(data['x']);
-    var np = parseFloat(data['np']);
-    var nr = parseFloat(data['nr']);
-    var fa0 = parseFloat(data['fa0']);
-
-    ca0 =
-      (parseFloat(data["gamma"]) * parseFloat(data["presion"])) /
-      (0.082 * parseFloat(data["temp"]));
-    ea = (np-nr)/nr;
-    v = fa0 / (k*ca0);
     var part1 = Number();
     var part2 = Number();
     var part3 = Number();
-    part1 = 1 + ea;
-    part2 = Math.log(1/(1-x));
-    part3 = ea * x;
-    v = v * ((part1 * part2)-part3);
+    var part4 = Number();
+
+    let gamma = parseFloat(data["gamma"]);
+    let presion = parseFloat(data["presion"]);
+    let temperatura = parseFloat(data["temp"]);
+    let xcon = parseFloat(data["xconversion"]);
+    let xres = parseFloat(data["xrestante"]);
+    let k = parseFloat(data['k']);
+    let np = parseFloat(data['np']);
+    let nr = parseFloat(data['nr']);
+    let fa0 = parseFloat(data['fa0']);
+
+    ca0 = (gamma * presion) / (0.082 * temperatura);
+    ea = (np - nr) / nr;
+    part1 = (fa0 / (k*ca0));
+    part2 = (1 + ea);
+    part3 = (Math.log(1/(xres)));
+    part4 = (ea * xcon); 
+    
+    v = part1 * ( (part2 * part3) - part4 );
 
     document.getElementById("ca0").value = ca0;
     document.getElementById("ea").value = ea;
@@ -34,7 +39,7 @@ export const RTFPOrd1Tip2 = () => {
   return (
     <div className="card">
       <div className="card-body">
-        <h5 className="card-title">Reacción de primer orden tipo A --  B + I</h5>
+        <h5 className="card-title">Reacción de primer orden tipo A <b>&#x2192;</b>  B + I</h5>
         <div className="card-text">
           <form className="form-inline" onSubmit={handleSubmit(calculate)}>
             <div className="row">&nbsp;</div>
@@ -66,7 +71,7 @@ export const RTFPOrd1Tip2 = () => {
                     <td>atm</td>
                   </tr>
                   <tr>
-                    <td>FA0</td>
+                    <td>FAo</td>
                     <td>
                       <input
                         className="form-control"
@@ -85,15 +90,26 @@ export const RTFPOrd1Tip2 = () => {
                         id={"k"}
                       />
                     </td>
-                    <td>1/s</td>
+                    <td>1/hr</td>
                   </tr>
                   <tr>
-                    <td>X</td>
+                    <td>Xconversión</td>
                     <td>
                       <input
                         className="form-control"
-                        {...register("x")}
-                        id={"x"}
+                        {...register("xconversion")}
+                        id={"xconversion"}
+                      />
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Xrestante</td>
+                    <td>
+                      <input
+                        className="form-control"
+                        {...register("xrestante")}
+                        id={"xrestante"}
                       />
                     </td>
                     <td></td>

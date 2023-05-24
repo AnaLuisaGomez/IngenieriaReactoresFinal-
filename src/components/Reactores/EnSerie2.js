@@ -93,7 +93,7 @@ export const EnSerie2 = () => {
                         id={"teta"}
                       />
                     </td>
-                    <td>mol / seg</td>
+                    <td>hrs</td>
                   </tr>
                   <tr>
                     <td>X</td>

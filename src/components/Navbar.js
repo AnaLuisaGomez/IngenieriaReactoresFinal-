@@ -15,6 +15,7 @@ export const Navbar = () => {
   const [element8Expanded, setElement8Expanded] = useState(false);
   const [element9Expanded, setElement9Expanded] = useState(false);
   const [element10Expanded, setElement10Expanded] = useState(false);
+  const [element11Expanded, setElement11Expanded] = useState(false);
 
   const toggleElement1 = () => {
     setElement1Expanded(!element1Expanded);
@@ -45,6 +46,9 @@ export const Navbar = () => {
   };
   const toggleElement10 = () => {
     setElement10Expanded(!element10Expanded);
+  };
+  const toggleElement11 = () => {
+    setElement11Expanded(!element11Expanded);
   };
 
   return (
@@ -298,10 +302,10 @@ export const Navbar = () => {
             </li>
             <li>
               <div className="sidebar-element">
-                <div className="element-header" onClick={toggleElement8}>
+                <div className="element-header" onClick={toggleElement11}>
                   RTCA
                 </div>
-                {element8Expanded && (
+                {element11Expanded && (
                   <ul className="sub-elements">
                     <li>
                       <Link className="disabled-link" to={"RTCAOrden1"}>
@@ -327,12 +331,12 @@ export const Navbar = () => {
                   <ul className="sub-elements">
                     <li>
                       <Link className="disabled-link" to={"RTFPOrd1Tip1"}>
-                        Orden 1 tipo A+ I ---> B+C
+                        Orden 1 tipo A+ I <b>&#x2192;</b> B+C
                       </Link>
                     </li>
                     <li>
                       <Link className="disabled-link" to={"RTFPOrd1Tip2"}>
-                        Orden 1 tipo A ---> B + I
+                        Orden 1 tipo A <b>&#x2192;</b> B + I
                       </Link>
                     </li>
                     <li>

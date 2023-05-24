@@ -17,7 +17,7 @@ export const RTCADensidad = () => {
   return (
     <div className="card">
       <div className="card-body">
-        <h5 className="card-title">Densidad constante A -- B -- C</h5>
+        <h5 className="card-title">Densidad constante A <b>&#x2192;</b> B <b>&#x2192;</b> C</h5>
         <div className="card-text">
           <form className="form-inline" onSubmit={handleSubmit(calculate)}>
             <div className="row">&nbsp;</div>
