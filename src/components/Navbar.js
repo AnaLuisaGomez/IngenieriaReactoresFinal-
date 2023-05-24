@@ -367,7 +367,7 @@ export const Navbar = () => {
                     </li>
                     <li>
                       <Link className="disabled-link" to={"EnSerie2"}>
-                        Cálcuo de la conversión
+                        Cálculo de la conversión
                       </Link>
                     </li>
                   </ul>
