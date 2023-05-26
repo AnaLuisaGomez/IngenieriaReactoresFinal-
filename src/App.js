@@ -42,7 +42,7 @@ function App() {
           <div className='col-8'>
             <Routes>
               <Route path='/' element={<Home />}/>
-              <Route path='deployTest' element={<Home />}/>
+              <Route path='IngenieriaReactoresFinal-' element={<Home />}/>
               <Route path='DifRevOrden1' element={<DifRevOrden1 />}/>
               <Route path='DifRevOrden2' element={<DifRevOrden2 />}/>
               <Route path='IntRevOrden1' element={<IntRevOrden1 />}/>
