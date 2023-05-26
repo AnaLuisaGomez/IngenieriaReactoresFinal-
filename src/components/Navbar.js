@@ -53,8 +53,11 @@ export const Navbar = () => {
 
   return (
     <div className="sidebar">
-      <div className="sidebar-element">
-        <div className="element-header" onClick={toggleElement1}>
+      <div className="sidebar-element navbar-animmenu">
+        <div
+          className="element-header show-dropdown main-navbar"
+          onClick={toggleElement1}
+        >
           Velocidad de Reacción
         </div>
         {element1Expanded && (
@@ -296,9 +299,13 @@ export const Navbar = () => {
         {element8Expanded && (
           <ul className="sub-elements">
             <li>
-              <Link className="disabled-link" to={"BATCH"}>
-                BATCH
-              </Link>
+              <div className="sidebar-element">
+                <div className="element-header">
+                  <Link className="disabled-link" to={"BATCH"}>
+                    BATCH
+                  </Link>
+                </div>
+              </div>
             </li>
             <li>
               <div className="sidebar-element">
@@ -321,7 +328,6 @@ export const Navbar = () => {
                 )}
               </div>
             </li>
-
             <li>
               <div className="sidebar-element">
                 <div className="element-header" onClick={toggleElement9}>
@@ -374,13 +380,15 @@ export const Navbar = () => {
                 )}
               </div>
             </li>
-            <li>
-              <Link className="disabled-link2" to={"/"}>
-                <b>Acerca de nosotros</b>
-              </Link>
-            </li>
           </ul>
         )}
+        <ul className="sub-elements">
+          <li>
+            <Link className="disabled-link2" to={"/"}>
+              <b>Acerca de nosotros</b>
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
   );
