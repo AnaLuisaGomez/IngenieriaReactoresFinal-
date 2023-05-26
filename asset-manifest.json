@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/IngenieriaReactoresFinal-/static/css/main.3900e413.css",
-    "main.js": "/IngenieriaReactoresFinal-/static/js/main.e9fcbcb2.js",
+    "main.js": "/IngenieriaReactoresFinal-/static/js/main.1054b4d2.js",
     "static/media/portada.png": "/IngenieriaReactoresFinal-/static/media/portada.b5c797ff3f8907c7a24b.png",
     "static/media/logo.png": "/IngenieriaReactoresFinal-/static/media/logo.6517d75cc503d8424507.png",
     "static/media/fes.png": "/IngenieriaReactoresFinal-/static/media/fes.c647a0ab4ca1213bc5c1.png",
     "index.html": "/IngenieriaReactoresFinal-/index.html",
     "main.3900e413.css.map": "/IngenieriaReactoresFinal-/static/css/main.3900e413.css.map",
-    "main.e9fcbcb2.js.map": "/IngenieriaReactoresFinal-/static/js/main.e9fcbcb2.js.map"
+    "main.1054b4d2.js.map": "/IngenieriaReactoresFinal-/static/js/main.1054b4d2.js.map"
   },
   "entrypoints": [
     "static/css/main.3900e413.css",
-    "static/js/main.e9fcbcb2.js"
+    "static/js/main.1054b4d2.js"
   ]
 }
