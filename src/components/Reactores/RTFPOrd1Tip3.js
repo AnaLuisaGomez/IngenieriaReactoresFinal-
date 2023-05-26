@@ -16,7 +16,6 @@ export const RTFPOrd1Tip3 = () => {
     var part3 = Number();
     var part4 = Number();
 
-    let t0 = parseFloat(data["t0"]);
     let t1 = parseFloat(data["t1"]);
     let t2 = parseFloat(data["t2"]);
     let presion = parseFloat(data["presion"]);
@@ -28,23 +27,19 @@ export const RTFPOrd1Tip3 = () => {
     let nr = parseFloat(data["nr"]);
     let gamma = parseFloat(data["gamma"]);
     
-
-    ca0 = (gamma * presion) / (0.082 * t0);
-    potencia = (ea/0.001987) * ( (1/t2) - (1/t0) );
+    e = (np - nr) / nr;
+    ca0 = (gamma * presion) / (0.082 * t1);
+    potencia = (ea/0.001987) * ( (1/t2) - (1/t1) );
     K1 = k2 * ( Math.pow( Math.E, potencia));
     fb0 = p * (125/110376);
     fa0 = fb0 / x;
-    e = (np - nr) / nr;
+    
     
     part1 = fa0/(K1*ca0);
-    console.log("p1 " + part1);
-    part2 = 1 + ea;
-    console.log("p2 " + part2);
+    part2 = 1 + e;
     part3 = Math.log(1/(1-x));
-    console.log("p3 " + part3);
-    part4 = ea * x;
-    console.log("p4 " + part4);
-    v = part1 * ( (part2* part3) / part4 );
+    part4 = e * x;
+    v = part1 * ( (part2* part3) - part4 );
     
     document.getElementById("ca0").value = ca0;
     document.getElementById("K1").value = K1;
@@ -67,17 +62,6 @@ export const RTFPOrd1Tip3 = () => {
             <div className="row">
               <table className="table table-striped">
                 <tbody>
-                <tr>
-                    <td>T0</td>
-                    <td>
-                      <input
-                        className="form-control"
-                        {...register("t0")}
-                        id={"t0"}
-                      />
-                    </td>
-                    <td>ºK</td>
-                  </tr>
                   <tr>
                     <td>T1</td>
                     <td>
@@ -142,7 +126,7 @@ export const RTFPOrd1Tip3 = () => {
                         id={"ea"}
                       />
                     </td>
-                    <td>1/s</td>
+                    <td>kcal/mol</td>
                   </tr>
                   <tr>
                     <td>X</td>
