@@ -35,10 +35,10 @@ import { EnSerie2 } from './components/Reactores/EnSerie2';
 
 function App() {
   return (
-    <div className='App '>
-      <div className='container-fluid'>
+    <div className='App container-fluid'>
+      <div className=''>
         <div className='row justify-content-center min-vh-100'>
-          <div className='col-2'><Navbar /></div>
+          <div className='col'><Navbar /></div>
           <div className='col-8'>
             <Routes>
               <Route path='/' element={<Home />}/>
@@ -74,7 +74,7 @@ function App() {
 
              </Routes>
           </div>
-          <div className='col-2'></div>
+          <div className='col'></div>
         </div>
       </div>
     </div>

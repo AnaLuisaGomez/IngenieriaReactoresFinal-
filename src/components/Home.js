@@ -44,7 +44,7 @@ export const Home = () => {
           <div className='col-sm-2'>&nbsp;</div>
           <div className='col-sm-4'>
             <h3 className='text-center'>Semestre 2023-2</h3><br/>
-            <img src={portada} class="mx-auto d-block" alt="Imagen de la tarjeta"  style={{height: "50rem", width: "55rem"}}/>
+            <img src={portada} class="mx-auto d-block" alt="Imagen de la tarjeta"  />
           </div>
           <div className='col-sm-4'>&nbsp;</div>
         </div>
